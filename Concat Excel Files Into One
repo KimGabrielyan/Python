@@ -1,0 +1,15 @@
+### Concat Excels Into One
+
+import pandas as pd
+import glob
+
+location = r"path_to_files\\*.xlsx" #path_to_files + \\*.xlsx
+
+excel_files = glob.glob(location)
+
+df1 = pd.DataFrame()
+for excel_file in excel_files:
+    df2 = pd.read_excel(excel_file)
+    df = pd.concat([df1, cdf2], ignore_index = True)
+    
+df.head()
